@@ -55,3 +55,9 @@ Route::get('/editar-livro/{id}', function(Request $request, $id) {
 
 });
 
+Route::get('/excluir-livro/{id}', function ($id){
+    $biblioteca = \App\Models\Biblioteca::find($id);
+   $biblioteca -> delete ();
+
+   echo "Livro EXCLUIDO com sucesso!";
+    });
